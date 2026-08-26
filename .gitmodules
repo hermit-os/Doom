@@ -4,3 +4,6 @@
 [submodule "doomgeneric"]
 	path = doomgeneric
 	url = https://github.com/ozkl/doomgeneric.git
+[submodule "kernel-fork"]
+	path = kernel-fork
+	url = git@github.com:GloriousAlpaca/kernel-vga-addition.git
