@@ -29,23 +29,26 @@ extern int sys_get_framebuffer_info(FramebufferInfo *info);
 static unsigned char convertToDoomKey(unsigned char key) {
   switch (key) {
   case 0x11:
-    return KEY_UPARROW; // W
+    return KEY_UPARROW;
   case 0x1E:
-    return KEY_LEFTARROW; // A
+    return KEY_LEFTARROW;
   case 0x1F:
-    return KEY_DOWNARROW; // S
+    return KEY_DOWNARROW;
   case 0x20:
-    return KEY_RIGHTARROW; // D
+    return KEY_RIGHTARROW;
   case 0x39:
-    return ' '; // Space
+    return KEY_USE;
+  case 0x21:
+    return KEY_FIRE;
   case 0x1C:
-    return KEY_ENTER; // Enter
+    return KEY_ENTER;
   case 0x01:
-    return KEY_ESCAPE; // Esc
+    return KEY_ESCAPE;
   case 0x1D:
-    return KEY_RCTRL; // Strg
-
-    // Arrow Keys
+    return KEY_RCTRL;
+  case 0x2A:
+  case 0x36:
+    return KEY_RSHIFT;
   case 0x48:
     return KEY_UPARROW;
   case 0x50:
@@ -54,9 +57,9 @@ static unsigned char convertToDoomKey(unsigned char key) {
     return KEY_LEFTARROW;
   case 0x4D:
     return KEY_RIGHTARROW;
+  default:
+    return 0;
   }
-
-  return 0; // 0: unknown key
 }
 
 int DG_GetKey(int *pressed, unsigned char *doomKey) {
