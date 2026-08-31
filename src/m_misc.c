@@ -62,8 +62,8 @@ void M_MakeDirectory(char *path) {
 // Check if a file exists
 
 boolean M_FileExists(char *filename) {
-  // We only allow our doom1 image in ram
-  if (strstr(filename, "doom1.wad")) {
+  // We only allow our doom image in ram
+  if (strstr(filename, "doom.wad")) {
     return true;
   }
   return false;

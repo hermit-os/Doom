@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-extern const byte _binary_doom1_wad_start[];
-extern const byte _binary_doom1_wad_end[];
+extern const byte _binary_doom_wad_start[];
+extern const byte _binary_doom_wad_end[];
 
 static void Hermit_CloseFile(wad_file_t *file) { free(file); }
 
@@ -28,7 +28,7 @@ static wad_file_class_t hermit_wad_file_class = {NULL, Hermit_CloseFile,
 wad_file_t *W_OpenFile(char *path) {
   // HermitOS environment provides a single statically linked WAD.
   // Requests for external IWADs or PWADs are unsupported and must fail.
-  if (!strstr(path, "doom1.wad")) {
+  if (!strstr(path, "doom.wad")) {
     return NULL;
   }
 
@@ -40,9 +40,8 @@ wad_file_t *W_OpenFile(char *path) {
   }
 
   file->file_class = &hermit_wad_file_class;
-  file->mapped = (byte *)_binary_doom1_wad_start;
-  file->length =
-      (unsigned int)(_binary_doom1_wad_end - _binary_doom1_wad_start);
+  file->mapped = (byte *)_binary_doom_wad_start;
+  file->length = (unsigned int)(_binary_doom_wad_end - _binary_doom_wad_start);
 
   return file;
 }

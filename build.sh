@@ -2,7 +2,7 @@
 set -e
 
 APP_DIR="$(pwd)"
-KERNEL_DIR="$APP_DIR/kernel-fork"
+KERNEL_DIR="$APP_DIR/kernel"
 LIB_SUBDIR="target/x86_64/debug"
 
 cd "$KERNEL_DIR"
