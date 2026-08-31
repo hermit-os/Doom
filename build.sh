@@ -3,7 +3,7 @@ set -e
 
 APP_DIR="$(pwd)"
 KERNEL_DIR="$APP_DIR/kernel-fork"
-LIB_SUBDIR="target/x86_64/debug" 
+LIB_SUBDIR="target/x86_64/debug"
 
 cd "$KERNEL_DIR"
 cargo xtask build --arch x86_64 --features "bga pc-keyboard mman"
@@ -21,7 +21,7 @@ docker run --rm \
 if [ "$(uname)" == "Darwin" ]; then
     QEMU_DISPLAY="cocoa,zoom-to-fit=on"
 else
-    QEMU_DISPLAY="sdl,zoom-to-fit=on"
+    QEMU_DISPLAY="sdl"
 fi
 
 cd "$APP_DIR"

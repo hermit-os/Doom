@@ -57,6 +57,10 @@ static unsigned char convertToDoomKey(unsigned char key) {
     return KEY_LEFTARROW;
   case 0x4D:
     return KEY_RIGHTARROW;
+  case 0x2C:
+    return 'y';
+  case 0x31:
+    return 'n';
   default:
     return 0;
   }
