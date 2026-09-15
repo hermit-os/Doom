@@ -45,3 +45,11 @@ Use `./build.sh` to build the Unikernel-Image and run Doom in QEMU.
 
 The Application prints out unknown scancodes into the console. Use the first (press) scancode to add custom keybinds in `doomgeneric_hermit.c`.
 Scancodes can also be taken out of the [Scancode Set 1 on OSDev Wiki](https://wiki.osdev.org/PS/2_Keyboard#Scan_Code_Set_1).
+
+# Attribution & Licenses
+This project statically links multiple open-source components into a single Unikernel binary. Due to the copyleft requirements of the Doom engine, the resulting binary is subject to the **GNU General Public License v2 (GPLv2)**.
+
+- **Doom Engine:** Original source code developed by [id Software](https://github.com/id-Software/DOOM), released under the GPLv2.
+- **doomgeneric:** The portable C implementation utilized as a submodule is maintained by [ozkl](https://github.com/ozkl/doomgeneric), licensed under the GPLv2.
+- **HermitOS:** The underlying Unikernel, Rust kernel sources, and C cross-compiler toolchain are developed by the [HermitOS Project](https://github.com/hermit-os), licensed under MIT and Apache License 2.0.
+- **Game Assets:** The WAD files contain proprietary game data and are the copyrighted property of id Software / ZeniMax Media. This repository does not distribute any game assets. Users must provide their own legally acquired WAD file to build and run the project.
